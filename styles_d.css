@@ -1,0 +1,203 @@
+body 
+{
+    font-family: monospace;
+    background-color: lavender;
+    margin-right: 25px;
+    margin-left: 25px;
+    text-align: justify;
+    color: black;
+}
+@font-face {
+    font-family: FiraCode;
+    src: url(FiraCode-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: FiraCodeL;
+    src: url(FiraCode-Light.ttf);
+}
+
+
+p
+{
+    font-family: FiraCodeL;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    background-color: lavender;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+
+
+.toggle_button
+{
+    font-family: monospace;
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
+    color: black;
+    background-color: rgb(187, 187, 246);
+}
+
+.toggle_button:hover {
+    background-color: rgb(138, 138, 248);
+    cursor: pointer;
+}
+
+
+.name {
+    font-size: 40px;
+    letter-spacing: 5px;
+    overflow: auto;
+    position: sticky;
+    top: 0;
+    color: black;
+    background-color: lavender;
+    font-family: FiraCode;
+}
+
+
+.underline
+{
+    text-decoration: underline;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    background-color: lavender;
+    z-index: 1;
+}
+
+.innerheader {
+    display: flex;
+    align-items:center;
+}
+
+.pfp {
+    height: 400px;
+    border-radius: 50%;
+}
+
+
+.general_text {
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+p, li, ul { 
+    font-size: 15px;
+    color: black;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+}
+
+
+.quotes
+{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 300px; 
+    margin: 10px;
+    line-height: 0.0;
+    color: rgb(127, 59, 186);
+}
+.hidden-text
+{
+    text-align:center;
+    color: lavender;
+    transition: color 0.3s ease;
+}
+.hidden-text:hover
+{
+    color: black;
+    transition-delay: 0.5s;
+}
+
+h2
+{
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: underline;
+    overflow: auto;
+    position: sticky;
+    top: 0;
+    background-color: lavender;
+}
+h3
+{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.spinner
+{
+    height: 400px;
+    width: 400px;
+    background-color: transparent;
+    border: 10px solid lavender;
+    animation: spin 3s infinite;
+    margin: 20px;
+    border-radius: 50%;
+    transition: background-image 0.3s ease;
+}
+
+.spinner:hover
+{
+    background-image: url('bulb.png');
+    background-size: 200px;
+    transition-delay: 0.5s;
+}
+
+@keyframes spin
+{
+    0%
+    {
+        transform: rotate(-2deg);
+    }
+    50%
+    {
+        transform: rotate(2deg);
+    }
+    100%
+    {
+        transform: rotate(-2deg);   
+    }
+}
+
+footer {
+    text-align: center; /* Center-align the content */
+    padding: 20px; /* Add padding to the entire footer */
+    background-color:lavender ; /* Add a background color */
+}
+
+.footer-content {
+    display: inline-block; /* Ensure the content is centered */
+}
+
+.social-icons img {
+    margin: 5px; /* Add some space between the icons */
+}

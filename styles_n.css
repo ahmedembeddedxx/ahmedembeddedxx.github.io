@@ -1,0 +1,209 @@
+body 
+{
+    font-family: monospace;
+    background-color: #1E2025;
+    margin-right: 25px;
+    margin-left: 25px;
+    text-align: justify;
+    color: #1DD2C2;
+}
+
+@font-face {
+    font-family: FiraCode;
+    src: url(FiraCode-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: FiraCodeL;
+    src: url(FiraCode-Light.ttf);
+}
+
+p
+{
+    font-family: FiraCodeL;
+}
+
+
+.name {
+    font-size: 40px;
+    letter-spacing: 5px;
+    overflow: auto;
+    position: sticky;
+    top: 0;
+    background-color: #1E2025;
+    font-family: FiraCode;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+    gap: 20px;
+    color: #1E2025;
+}
+
+
+.project {
+    background-color: wheat;
+    color: #1E2025;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    background-color: #1E2025;
+    color: wheat;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+
+.underline
+{
+    text-decoration: underline;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    background-color: #1E2025;
+    z-index: 1;
+}
+
+.innerheader {
+    display: flex;
+    align-items:center;
+}
+
+.pfp {
+    height: 400px;
+    border-radius: 50%;
+
+}
+
+.toggle_button {
+
+    font-family: monospace;
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
+    background-color: #1DD2C2;
+    transition: background-color 0.3s ease;
+}
+
+.toggle_button:hover {
+    background-color: #0d5852;
+    cursor: pointer;
+}
+
+
+
+.general_text {
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+p, li, ul { 
+    font-size: 15px;
+}
+
+a {
+    color: #1DD2C2;
+    font-weight: bold;
+}
+
+
+.quotes
+{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 300px; 
+    color: wheat;
+}
+
+
+.hidden-text
+{
+    text-align:center;
+
+    color: #1E2025;
+    transition: color 0.3s ease;
+
+}
+.hidden-text:hover
+{
+    color: #1DD2C2;
+    transition-delay: 0.5s;
+}
+
+h2
+{
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: underline;
+    overflow: auto;
+    position: sticky;
+    top: 0;
+    background-color: #1E2025;
+    color: wheat
+}
+h3
+{
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+    
+}
+
+.spinner
+{
+    height: 400px;
+    width: 400px;
+    background-color: transparent;
+    border: 10px solid #1E2025;
+    animation: spin 3s infinite;
+    margin: 20px;
+    border-radius: 50%;
+    transition: color 0.3s ease;
+    
+}
+
+.spinner:hover
+{
+    transition-delay: 0.5s;
+    background-size: 100%;
+    
+    background-image: url('moon-1.png');
+}
+
+@keyframes spin
+{
+    0%
+    {
+        transform: rotate(-2deg);
+    }
+    50%
+    {
+        transform: rotate(2deg);
+    }
+    100%
+    {
+        transform: rotate(-2deg);   
+    }
+}
+
+
+footer {
+    text-align: center; /* Center-align the content */
+    padding: 20px; /* Add padding to the entire footer */
+}
+
+.footer-content {
+    display: inline-block; /* Ensure the content is centered */
+}
+
+.social-icons img {
+    margin: 5px; /* Add some space between the icons */
+}
