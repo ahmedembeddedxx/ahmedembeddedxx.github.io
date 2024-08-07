@@ -17,6 +17,25 @@ body
     src: url(FiraCode-Light.ttf);
 }
 
+@font-face {
+    font-family: FiraCodeM;
+    src: url(FiraCode-Medium.ttf);
+}
+
+@font-face {
+    font-family: FiraCodeB;
+    src: url(FiraCode-Bold.ttf);
+}
+
+title
+{
+    font-family: FiraCodeM;
+}
+
+.heads
+{
+    font-family: FiraCodeL;
+}
 
 p
 {
@@ -111,6 +130,7 @@ p, li, ul {
 a {
     color: black;
     font-weight: bold;
+    font-family: FiraCodeB;
 }
 
 

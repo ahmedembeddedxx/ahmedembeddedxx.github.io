@@ -1,53 +1,50 @@
-var i = 1; // Start from index 1 to skip the first character
-var txt = 'Ahmed Abdullah_'; /* The text */
-var speed = 100; /* The speed/duration of typing characters in milliseconds */
-var eraseSpeed = 20; /* The speed/duration of erasing characters in milliseconds */
-var delayBetween = 1000; /* Delay between typing and erasing in milliseconds */
+var nameText = 'Ahmed Abdullah_';
+var roles = ['ㅤResearcher', 'ㅤML Engineer', 'ㅤData Scientist', 'ㅤOpen Source Contributor'];
 
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  } 
-  
-  else {
-    setTimeout(eraseText, delayBetween);
+var nameIndex = 1; // Start from index 1 to skip the first character for name
+var roleIndex = 0; // Start from the first role
+var roleCharIndex = 1; // Start from index 1 to skip the first character for role
+
+var nameSpeed = 100; // Speed for typing name characters
+var roleSpeed = 100; // Speed for typing role characters
+var eraseSpeed = 20; // Speed for erasing characters
+var delayBetween = 1000; // Delay between typing and erasing
+
+function typeWriterName() {
+  if (nameIndex < nameText.length) {
+    document.getElementById("name").innerHTML += nameText.charAt(nameIndex);
+    nameIndex++;
+    setTimeout(typeWriterName, nameSpeed);
+  } else {
+    setTimeout(eraseRole, delayBetween);
   }
 }
 
-function eraseText() {
-  if (i >= 1) { // Start erasing from the second character
-    var str = txt.substring(0, i);
-    document.getElementById("demo").innerHTML = str;
-    i--;
-    setTimeout(eraseText, eraseSpeed);
-  } 
-  else {
-    i = 1; // Reset to skip the first character
-    setTimeout(typeWriter, delayBetween);
+function typeWriterRole() {
+  if (roleCharIndex < roles[roleIndex].length) {
+    document.getElementById("role").innerHTML += roles[roleIndex].charAt(roleCharIndex);
+    roleCharIndex++;
+    setTimeout(typeWriterRole, roleSpeed);
+  } else {
+    setTimeout(eraseRole, delayBetween);
+  }
+}
+
+function eraseRole() {
+  if (roleCharIndex >= 1) {
+    var str = roles[roleIndex].substring(0, roleCharIndex);
+    document.getElementById("role").innerHTML = str;
+    roleCharIndex--;
+    setTimeout(eraseRole, eraseSpeed);
+  } else {
+    roleIndex = (roleIndex + 1) % roles.length; // Move to the next role
+    roleCharIndex = 1; // Reset to skip the first character
+    setTimeout(typeWriterRole, delayBetween);
   }
 }
 
 window.onload = function() {
-    document.getElementById("demo").innerHTML = txt[0]; // Print the first character immediately
-    typeWriter();
+    document.getElementById("name").innerHTML = nameText[0]; // Print the first character immediately
+    document.getElementById("role").innerHTML = roles[roleIndex][0]; // Print the first character of the first role immediately
+    typeWriterName();
 };
-
-
-function toggleMode() {
-  var dayMode = document.getElementById('day-mode');
-  if (dayMode.getAttribute('href') === 'styles_d.css') {
-      dayMode.setAttribute('href', 'styles_n.css');
-  } else {
-      dayMode.setAttribute('href', 'styles_d.css');
-  }
-  // Adding transition effect
-  dayMode.onload = function() {
-      dayMode.style.transition = "opacity 1s ease-in-out";
-      dayMode.style.opacity = "0";
-      setTimeout(function() {
-          dayMode.style.opacity = "1";
-      }, 100);
-  };
-}

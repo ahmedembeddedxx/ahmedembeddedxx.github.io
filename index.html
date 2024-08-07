@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
+    <title>Ahmed Abdullah | Portfolio</title>
     <link rel="stylesheet" type="text/css" href="styles_n.css">
     <link rel="stylesheet" type="text/css" href="styles_d.css" id="day-mode">
     <script src="typing.js"></script>
@@ -11,18 +11,20 @@
 
 <body>
     <button onclick="toggleMode()" class="toggle_button">Change Mode</button>    
+    <button onclick="downloadResume()" class="toggle_button">Download My Resume</button>    
 
     <section style="background-color: white;">
         <div class="header">
             <div class="innerheader">
-                <div>
+                <div class="heads">
                     <p>Heyy there! 👋 <br>I'm...</p>
-                    <b><p id="demo" class="name"></p></b>
-                    <p>->Open-Source Contributor in Data, AI and Machine Learning</p>    
-                    <p>->DS Junior <a target="_blank" href="https://lhr.nu.edu.pk/">@FAST-NUCES</a>, Lahore </p>
-                    <p>->SWE-I <a target="_blank" href="http://algofig.com/">@AlgoFig</a></p>
-                    <p>->Research & Development Intern <a target="_blank" href="https://www.linkedin.com/company/urdux/">@UrduX</a></p>    
-                    <p>->Based in <strong>Lahore, Pakistan</strong></p>    
+                    <b><p id="name" class="name"></p></b>
+                    <div id="role" style="font-size: 28px;"></div>
+                    <p class="heads">->Open-Source Contributor in Data, AI and Machine Learning</p>    
+                    <p class="heads">->DS Junior <a target="_blank" href="https://lhr.nu.edu.pk/">@FAST-NUCES</a>, Lahore </p>
+                    <p class="heads">->SWE-I <a target="_blank" href="http://algofig.com/">@AlgoFig</a></p>
+                    <p class="heads">->Research & Development Intern <a target="_blank" href="https://www.linkedin.com/company/urdux/">@UrduX</a></p>    
+                    <p class="heads">->Based in <strong>Lahore, Pakistan</strong></p>    
     
                     <p><a target="_blank" href="https://github.com/ahmedembeddedxx/">@Github</a></p>    
                     <p><a target="_blank" href="https://www.linkedin.com/in/ahmedembedded">@LinkedIn</a></p>    
@@ -114,16 +116,7 @@
         
     <div>
         <h2>Professional Experience</h2>
-        <h3><a href="https://www.contract.pk/">@Contract.pk</a> (Summer Intern)</h3>
-        <ul>
-            <li><p>Contributed to 1 major web development project during 5-Weeks internship.</p></li>
-            <li><p>Developed skills in HTML, CSS, and JavaScript while enhancing user interfaces.</p></li>
-            <li><p>Utilized Git for version control, ensuring efficient collaboration.</p></li>
-            <li><p>Successfully implemented 4 key features of web designing, receiving positive feedback.</p></li>
-            <li><p>Played a significant role in advancing Contract.pk's digital platform.</p></li>
-        </ul>
-    
-        <h3><a href="http://algofig.com/">@AlgoFig</a> (Full Stack Developer)</h3>
+        <h3><a href="http://algofig.com/">@AlgoFig</a> (Software Engineer I)</h3>
         <ul>
             <li><p>Specialized in designing, developing, and maintaining comprehensive web applications and software solutions.</p></li>
             <li><p>Handled both front-end and back-end development, ensuring seamless integration and functionality across all layers.</p></li>
@@ -134,6 +127,16 @@
             <li><p>Conducted in-depth research on emerging technologies and trends in the EdTech industry.</p></li>
             <li><p>Analyzed market data, identified key insights, and developed innovative solutions to enhance UrduX's digital learning platform.</p></li>
         </ul>
+        <h3><a href="https://www.contract.pk/">@Contract.pk</a> (Summer Intern)</h3>
+        <ul>
+            <li><p>Contributed to 1 major web development project during 5-Weeks internship.</p></li>
+            <li><p>Developed skills in HTML, CSS, and JavaScript while enhancing user interfaces.</p></li>
+            <li><p>Utilized Git for version control, ensuring efficient collaboration.</p></li>
+            <li><p>Successfully implemented 4 key features of web designing, receiving positive feedback.</p></li>
+            <li><p>Played a significant role in advancing Contract.pk's digital platform.</p></li>
+        </ul>
+    
+
     </div>
     
     <div>
@@ -170,6 +173,10 @@
             } else {
                 stylesheet.setAttribute("href", "styles_d.css");
             }
+        }
+        function downloadResume()
+        {
+            window.open('https://drive.google.com/file/d/14L7pXe6T8WlV5O_9cFJ_IsokhXCe_CKz/view?usp=sharing')
         }
     </script>
 </body>
