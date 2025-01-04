@@ -1,263 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Abdullah | Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="styles_n.css">
-    <link rel="stylesheet" type="text/css" href="styles_d.css" id="day-mode">
-    <script src="typing.js"></script>
-</head>
+    <title>Ahmed Abdullah - Portfolio</title>
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --text-color: #333;
+            --bg-color: #fff;
+            --link-color: #3498db;
+            --font-family: 'Lato', Verdana, Helvetica, sans-serif;
+        }
 
-<body>
-    <button onclick="toggleMode()" class="toggle_button">Change Mode</button>
-    <button onclick="downloadResume()" class="toggle_button">Download My Resume</button>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <section style="background-color: white;">
-        <div class="header">
-            <div class="innerheader">
-                <div class="heads">
-                    <p>Heyy there! 👋 <br>I'm...</p>
-                    <b>
-                        <p id="name" class="name"></p>
-                    </b>
-                    <div id="role" style="font-size: 28px;"></div>
-                    <p class="heads">->Open-Source Contributor in Data, AI and Machine Learning</p>
-                    <p class="heads">->DS Junior <a target="_blank" href="https://lhr.nu.edu.pk/">@FAST-NUCES</a>,
-                        Lahore </p>
-                    <p class="heads">->Research Assistant <a target="_blank" href="https://www.jku.at/en/institute-of-computational-perception/">@JKU</a>   (Aug 2024 - Now)</p>
-                    
-                    <p class="heads">->SWE-I <a target="_blank" href="http://algofig.com/">@AlgoFig</a>   (Jan 2024 - Now)</p>
-                    <p class="heads">->Research & Development Intern <a target="_blank"
-                            href="https://www.linkedin.com/company/urdux/">@UrduX</a>   (Jun 2024 - Aug 2024)</p>
-                    <p class="heads">->Software Engineering Intern <a target="_blank"
-                        href="https://www.contract.pk/">@Contract.pk</a>   (Jun 2022 - Aug 2022)</p>
-                    <p class="heads">->Based in <strong>Lahore, Pakistan</strong></p>
+        body {
+            font-family: var(--font-family);
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-                    <p><a target="_blank" href="https://github.com/ahmedembeddedxx/">@Github</a></p>
-                    <p><a target="_blank" href="https://www.linkedin.com/in/ahmedembedded">@LinkedIn</a></p>
-                    <p><a target="_blank" href="mailto:business.ahmadabdullah@gmail.com">@MailTo</a></p>
-                </div>
-            </div>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
 
-            <div class="innerheader spinner">
-                <p class="hidden-text">
-                    i want to be an astronaut
-                    <img src="img.png" alt="Profile Picture" class="pfp">
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <hr>
-
-    <h2>Projects</h2>
-    <div class="projects-container">
-        <div class="project"
-            onclick="window.open('https://github.com/ahmedembeddedxx/multimodal-search-engine', '_blank')">
-            <h3>Multimodal Search Engine</h3>
-            <p>Integrates OpenAI's CLIP model for text and image search.</p>
-        </div>
-
-        <div class="project" onclick="window.open('https://github.com/ahmedembeddedxx/lbw-review-system', '_blank')">
-            <h3>LBW Review System</h3>
-            <p>Uses YOLOv8 for cricket LBW scenario analysis.</p>
-        </div>
-
-        <div class="project" onclick="window.open('https://github.com/ahmedembeddedxx/candlestick-data-viz', '_blank')">
-            <h3>Real-Time Candlestick Data Visualizations</h3>
-            <p>Real-time market trend analysis using C++.</p>
-        </div>
-
-        <div class="project"
-            onclick="window.open('https://github.com/ahmedembeddedxx/skin-cancer-detection-with-3D-TBP', '_blank')">
-            <h3>Skin Cancer Detection with 3D-TBP</h3>
-            <p>Uses CNN and detailed image analysis to detect skin cancer.</p>
-        </div>
-
-        <div class="project" onclick="window.open('https://github.com/ahmedembeddedxx/AskFAST', '_blank')">
-            <h3>AskFAST</h3>
-            <p>A chatbot for handling admission-related queries for FAST.</p>
-        </div>
-
-        <div class="project" onclick="window.open('https://github.com/ahmedembeddedxx/tasty-mushrooms', '_blank')">
-            <h3>Tasty Mushrooms</h3>
-            <p>Model to check mushrooms before eating.</p>
-        </div>
-
-        <div class="project"
-            onclick="window.open('https://github.com/ahmedembeddedxx/house-price-estimator', '_blank')">
-            <h3>Housing Price Prediction</h3>
-            <p>85% accuracy using Gradient Boosting Regression.</p>
-        </div>
-
-        <div class="project"
-            onclick="window.open('https://github.com/ahmedembeddedxx/driver-drowsyness-and-distraction-POV', '_blank')">
-            <h3>Object Detection on Dashcam POV Images</h3>
-            <p>Real-time object detection for driving scenarios.</p>
-        </div>
-
-        <div class="project"
-            onclick="window.open('https://github.com/ahmedembeddedxx/batch-twitter-sentiment-analysis', '_blank')">
-            <h3>Batch Twitter Sentiment Analysis</h3>
-            <p>Uses Hadoop and PySpark for batch processing.</p>
-        </div>
-
-        <div class="project"
-            onclick="window.open('https://github.com/ahmedembeddedxx/dinner-date-with-data', '_blank')">
-            <h3>Dinner Date with Data</h3>
-            <p>Recipe recommendations using PySpark.</p>
-        </div>
-
-        <div class="project"
-            onclick="window.open('https://github.com/ahmedembeddedxx/single-modal-emotion-detection', '_blank')">
-            <h3>Single Modal Emotion Detection</h3>
-            <p>NLP-based emotion analysis with 87% accuracy.</p>
-        </div>
-
-        <div class="project"
-            onclick="window.open('https://github.com/ahmedembeddedxx/legendary-sentinel-of-attendance', '_blank')">
-            <h3>Real-Time Face Attendance System</h3>
-            <p>Face recognition for attendance with 95% accuracy.</p>
-        </div>
-
-        <div class="project"
-            onclick="window.open('https://github.com/ahmedembeddedxx/reincarnation-of-espncricinfo', '_blank')">
-            <h3>ESPNCricInfo Web Application</h3>
-            <p>Comprehensive cricket statistics and live scores.</p>
-        </div>
-
-
-    </div>
-
-
-    <div>
-        <h2>Professional Experience</h2>
-        <h3><a href="http://algofig.com/">@AlgoFig</a> (Software Engineer I)</h3>
-        <ul>
-            <li>
-                <p>Specialized in designing, developing, and maintaining comprehensive web applications and software
-                    solutions.</p>
-            </li>
-            <li>
-                <p>Handled both front-end and back-end development, ensuring seamless integration and functionality
-                    across all layers.</p>
-            </li>
-        </ul>
-
-        <h3><a href="https://www.linkedin.com/company/urdux/">@UrduX</a> (Research & Development Intern)</h3>
-        <ul>
-            <li>
-                <p>Conducted in-depth research on emerging technologies and trends in the EdTech industry.</p>
-            </li>
-            <li>
-                <p>Analyzed market data, identified key insights, and developed innovative solutions to enhance UrduX's
-                    digital learning platform.</p>
-            </li>
-        </ul>
-        <h3><a href="https://www.contract.pk/">@Contract.pk</a> (Summer Intern)</h3>
-        <ul>
-            <li>
-                <p>Contributed to 1 major web development project during 5-Weeks internship.</p>
-            </li>
-            <li>
-                <p>Developed skills in HTML, CSS, and JavaScript while enhancing user interfaces.</p>
-            </li>
-            <li>
-                <p>Utilized Git for version control, ensuring efficient collaboration.</p>
-            </li>
-            <li>
-                <p>Successfully implemented 4 key features of web designing, receiving positive feedback.</p>
-            </li>
-            <li>
-                <p>Played a significant role in advancing Contract.pk's digital platform.</p>
-            </li>
-        </ul>
-
-
-    </div>
-
-    <div>
-        <h2>Certifications</h2>
-        <ul>
-            <li><a href="https://www.coursera.org/account/accomplishments/certificate/DHV92VFF2PB6" target="_blank">IBM
-                    Databases and SQL for Data Science with Python</a></li>
-            <br>
-            <li><a href="https://www.coursera.org/account/accomplishments/certificate/3H4DWQ84VR3D" target="_blank">IBM
-                    Python Project for Data Science</a></li>
-            <br>
-            <li><a href="https://www.coursera.org/account/accomplishments/certificate/9WVZ6B8E5FRH" target="_blank">IBM
-                    What is Data Science?</a></li>
-            <br>
-            <li><a href="https://www.coursera.org/account/accomplishments/certificate/U2HFLHLKQ8GC" target="_blank">IBM
-                    Data Science Methodology</a></li>
-            <br>
-            <li><a href="https://www.coursera.org/account/accomplishments/certificate/3394WFS5XMZT" target="_blank">IBM
-                    Python for Data Science, AI & Development</a></li>
-            <br>
-            <li><a href="https://www.coursera.org/account/accomplishments/certificate/MFNVM2BFT2VH" target="_blank">IBM
-                    Tools for Data Science</a></li>
-            <br>
-            <li><a href="https://www.coursera.org/account/accomplishments/certificate/Y5PAQ3WPH6SM" target="_blank">Data
-                    Science with Pandas (DATACAMP)</a></li>
-            <br>
-            <li><a href="https://www.coursera.org/account/accomplishments/certificate/DJNXTPRE7L5L" target="_blank">Data
-                    Science with NumPy (DATACAMP)</a></li>
-            <br>
-            <li><a href="https://www.coursera.org/account/accomplishments/certificate/XAQM8EJZRE3A" target="_blank">Data
-                    Science with Matplotlib (DATACAMP)</a></li>
-        </ul>
-    </div>
-
-    <script>
-        function toggleMode() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-
-            var stylesheet = document.getElementById("day-mode");
-            if (stylesheet.getAttribute("href") == "styles_d.css") {
-                stylesheet.setAttribute("href", "styles_n.css");
-            } else {
-                stylesheet.setAttribute("href", "styles_d.css");
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
             }
         }
-        function downloadResume() {
-            window.open('https://drive.google.com/file/d/1hBChd6juC8tXs_TTmEgxC0ffAgUWbiPT/view?usp=sharing')
-        }
-    </script>
-</body>
-<footer>
-    <div class="footer-container">
-        <div class="footer-content">
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/ahmedembedded/" target="_blank">
-                    <img title="Let's connect on LinkedIn"
-                        src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-                </a>
-                <a href="mailto:business.ahmadabdullah@gmail.com" target="_blank">
-                    <img title="Mail me"
-                        src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-                </a>
-                <a href="https://github.com/ahmedembeddedxx" target="_blank">
-                    <img title="Follow on GitHub"
-                        src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
-                </a>
-                <a href="https://www.instagram.com/ahmedembedded/" target="_blank">
-                    <img title="Follow on Instagram"
-                        src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
-                </a>
-                <a href="https://www.kaggle.com/ahmedembedded" target="_blank">
-                    <img title="Follow on Kaggle"
-                        src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white" />
-                </a>
-                <a href="https://www.researchgate.net/profile/Ahmed-Abdullah-71" target="_blank">
-                    <img title="See my researchgate"
-                        src="https://img.shields.io/badge/Research_Gate-00CCBB.svg?&style=for-the-badge&logo=ResearchGate&logoColor=white" />
-                </a>
-            </div>
-        </div>
-    </div>
-</footer>
 
+        header {
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-family);
+        }
+
+        .contact {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .contact a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-family: var(--font-family);
+            font-weight:bolder;
+        }
+
+        .experience-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-title {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+            text-decoration: underline;
+        }
+
+        .experience-org {
+            color: var(--link-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background-color: #f0f2f5;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .manuscripts {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <header>
+                <h1>Ahmed Abdullah</h1>
+                <div class="contact">
+                    <a target="_blank" href="mailto:business.ahmadabdullah@gmail.com">business.ahmadabdullah@gmail.com</a><br>
+                    <a target="_blank" href="https://github.com/ahmedembeddedxx">github.com/ahmedembeddedxx</a><br>
+                    +92-331-622-4618
+                </div>
+            </header>
+
+            <section>
+                <h2>Experience</h2>
+            
+                <div class="experience-item">
+                    <div class="experience-title">Research Assistant</div>
+                    <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/fsc/">School of Computing, FAST-NUCES</a></div>
+                    <div class="experience-date">Sept 2024 - Present</div>
+                    <p>Research in Healthcare: Working on developing a better approach for ischemic stroke functional prediction through multimodal imaging, utilizing deep learning models such as ResNet152, MedicalNet, and UNet for volumetric segmentation. This research aims to improve prediction accuracy and enhance clinical decision-making.</p>
+                </div>
+            
+                <div class="experience-item">
+                    <div class="experience-title">Research Assistant</div>
+                    <div class="experience-org"><a target="_blank" href="https://www.jku.at/en/institute-of-computational-perception/">Institute of Computational Perception - Johannes Kepler University</a></div>
+                    <div class="experience-date">Aug 2024 - Present</div>
+                    <p>Research in Multimodals: Contributed to ongoing research on face-voice association using state-of-the-art models like WavLM, ECAPA, and VGGVox on the VoxCelebV1 dataset. My work includes improving the robustness of voice and facial feature matching for applications in security and personalized systems.The model is able to acheive EER of 20% and we are still working on improving it</p>
+                </div>
+            
+                <div class="experience-item">
+                    <div class="experience-title">Research Intern</div>
+                    <div class="experience-org"><a target="_blank" href="https://www.linkedin.com/company/urdux">UrduX, FAST-NUCES</a></div>
+                    <div class="experience-date">Jan 2024 - Aug 2024</div>
+                    <p>Research in Language Models and Bias Detection: Worked on Large Language Models (LLMs) and their impact on gender and race biases in image generation. The project involved analyzing the biases in AI-generated imagery and developing methods to mitigate these biases. My work helped improve the ethical use of AI in generating fairer, more diverse imagery in applications like advertising, media, and content generation.</p>
+                </div>
+            
+            </section>
+
+            <section class="manuscripts">
+                <h2>Manuscripts</h2>
+                <div class="experience-item">
+                    <div class="experience-title">A Novel Approach for Three-Way Classification of Lumbar Spine Degeneration Using Pseudo-Modality Learning to Handle Missing MRI Data</div>
+                    <p>This project addresses the classification of degenerative lumbar spine conditions using GANs to impute missing MRI data. Over 70 models were tested, achieving state-of-the-art results with a minority class accuracy of 92.24% and an AUC-ROC of 64%. The approach effectively handles incomplete MRI datasets, leveraging GANs for data imputation and robust classification. The study demonstrates significant improvements in classifying underrepresented conditions. It highlights the potential of advanced generative and classification techniques in medical imaging.</p>
+                    <div class="experience-date">Status: Manuscript in preparation for submission to MICCAI/RSNA (Dec. 2024)</div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-title">Research Decline and Retraction Surge in Pakistan: A Critical Examination </div>
+                    <p>This study examines the rise in research paper retractions and declining research quality in Pakistan through surveys and interviews with over 300 participants. Key issues include plagiarism, data fabrication, lack of ethics training, institutional barriers, and the pressure to “publish or perish.” Results reveal that international aid supports less than 60% of researchers, and 70% of students lack awareness of research ethics. To address these issues, the study develops a cosine similarity tool for citation analysis, reducing errors in academic writing. It recommends mandatory ethics training, institutional support, and automated tools to promote ethical research and improve Pakistan’s academic reputation.</p>
+                    <div class="experience-date">Status: Paper available at <a target="_blank" href="https://www.authorea.com/users/848480/articles/1250086-research-decline-and-retraction-surge-in-pakistan-a-critical-examination">Authorea</a></div>
+            </section>
+
+            <section>
+                <h2>Projects</h2>
+            
+                <div class="experience-item">
+                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/lumbar-spine-degenerative-classification" target="_blank">Lumbar Spine Degenerative Classification</a></div>
+                    <p>A state-of-the-art model to classify degenerative MRIs for the Lumbar Spine with an ability to impute the missing MRI using the pseudo-modality approach.</p>
+                </div>
+            
+                <div class="experience-item">
+                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/AskFAST" target="_blank">AskFAST Chatbot</a></div>
+                    <p>AskFAST is a chatbot designed to handle admission-related queries for FAST, streamlining the process with AI-driven responses.</p>
+                </div>
+            
+                <div class="experience-item">
+                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/skin-cancer-lesion-segmentation" target="_blank">Skin Cancer Lesion Segmentation</a></div>
+                    <p>Developed a multimodal system to detect skin cancer, combining cutting-edge CNNs with detailed image analysis to elevate skin cancer detection.</p>
+                </div>
+            
+                <div class="experience-item">
+                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/lbw-review-system" target="_blank">LBW Review System</a></div>
+                    <p>The LBW (Leg Before Wicket) Review System detects and analyzes ball movements in cricket matches, specifically focusing on LBW scenarios.</p>
+                </div>
+            
+                <div class="experience-item">
+                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/multimodal-search-engine" target="_blank">Multimodal Search Engine</a></div>
+                    <p>Developed a multimodal search engine using CLIP by OpenAI with Flask API for backend and HTML/CSS for the frontend web application, using image embeddings for searching images.</p>
+                </div>
+            
+                <div class="experience-item">
+                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/candlestick-data-viz" target="_blank">Candlestick Data Visualization</a></div>
+                    <p>Created an interactive candlestick chart in C++ to visualize financial market data with an emphasis on stock price movements.</p>
+                </div>
+            
+                <div class="experience-item">
+                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/HCT-survival-prediction" target="_blank">HCT Survival Prediction</a></div>
+                    <p>Developed a model to predict survival outcomes for Hematopoietic Cell Transplantation (HCT) patients, leveraging patient data and machine learning techniques.</p>
+                </div>
+            
+                <div class="experience-item">
+                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/AutoCiter" target="_blank">AutoCiter</a></div>
+                    <p>AutoCiter is a Flask-based tool that uses sentence transformers and cosine similarity to automatically cite text from uploaded PDF papers.</p>
+                </div>
+            
+                <div class="experience-item">
+                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/dinner-date-with-data" target="_blank">Dinner Date with Data</a></div>
+                    <p>This project recommends recipes to users based on their preferences using PySpark and GPU acceleration, leveraging distributed computing capabilities.</p>
+                </div>
+            
+                <div class="experience-item">
+                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/batch-twitter-sentiment-analysis" target="_blank">Batch Twitter Sentiment Analysis</a></div>
+                    <p>This project performs sentiment analysis on Twitter data in a batch processing manner using the ntscraper library, Hadoop clusters (HDFS), and PySpark.</p>
+                </div>
+            
+            </section>
+
+
+        </main>
+
+        <aside>
+            <img src="/pfp.png" alt="Profile" class="profile-image">
+            
+            <section>
+                <h2>Education</h2>
+                <div class="experience-item">
+                    <div class="experience-title">Bachelor of Science in Data Science</div>
+                    <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/">National University of Computer and Emerging Sciences, Lahore</a></div>
+                    <div class="experience-date">Aug. 2022 – May. 2026</div>
+                    <p>CGPA: 3.51/4.00</p>
+                    <p>Honours: Dean's List (twice), Top of Batch</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Skills</h2>
+                <div class="skills">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">C</span>
+                    <span class="skill-item">C++</span>
+                    <span class="skill-item">PyTorch</span>
+                    <span class="skill-item">TensorFlow</span>
+                    <span class="skill-item">Transformers</span>
+                    <span class="skill-item">Power BI</span>
+                    <span class="skill-item">Tableau</span>
+                    <span class="skill-item">Plotly</span>
+                    <span class="skill-item">MONAI</span>
+                    <span class="skill-item">Scikit-learn</span>
+                    <span class="skill-item">Matplotlib</span>
+                    <span class="skill-item">Pandas</span>
+                    <span class="skill-item">NumPy</span>
+                    <span class="skill-item">PySpark</span>
+                    <span class="skill-item">Hadoop</span>
+                    <span class="skill-item">Flask</span>
+                    <span class="skill-item">Firebase</span>
+                    <span class="skill-item">MongoDB</span>
+                    <span class="skill-item">Mongoose</span>
+                    <span class="skill-item">PostgreSQL</span>
+                    
+                </div>
+            </section>
+            <section>
+                <h2>Social Media</h2>
+                <div class="skills">
+                    <a class="skill-item" href="https://www.linkedin.com/in/ahmedembedded/" target="_blank">LinkedIn</a>
+                    <a class="skill-item" href="mailto:busines.ahmadabdullah@gmail.com" target="_blank">Gmail</a>
+                    <a class="skill-item" href="https://github.com/ahmedembeddedxx" target="_blank">GitHub</a>
+                    <a class="skill-item" href="https://www.kaggle.com/ahmedembedded" target="_blank">Kaggle</a>
+                    <a class="skill-item" href="https://www.researchgate.net/profile/Ahmed-Abdullah-71" target="_blank">ResearchGate</a>
+                    <a class="skill-item" href="https://scholar.google.com/citations?user=NPU4utEAAAAJ&hl=en" target="_blank">Google Scholar</a>
+                
+                </div>
+            </section>
+            <section>
+                <h2>Certifications</h2>
+                <div class="experience-item">
+                    <div class="experience-org" style="color: #2c3e50;">BioInformatics Specialization from <a target="_blank" href="https://www.coursera.org/specializations/bioinformatics">UC San Diego (Coursera)</a></div>
+                    <div class="experience-org" style="color: #2c3e50;">Data Science Specialization from <a target="_blank" href="https://www.coursera.org/professional-certificates/ibm-data-science">IBM (Coursera)</a></div>
+                    <div class="experience-org" style="color: #2c3e50;">Artificial Intelligence Specialization from <a target="_blank" href="https://www.coursera.org/professional-certificates/ibm-ai">IBM (Coursera)</a></div>
+                    <div class="experience-org" style="color: #2c3e50;">Deep Learning Specialization from <a target="_blank" href="https://www.coursera.org/specializations/deep-learning">Deeplearning.ai (Coursera)</a></div>
+                    <div class="experience-org" style="color: #2c3e50;">Short Courses from <a target="_blank" href="https://www.kaggle.com/learn">Kaggle</a></div>
+                </div>
+            </section>
+
+        </aside>
+    </div>
+</body>
 </html>
