@@ -6,6 +6,7 @@
     <title>Ahmed Abdullah - Portfolio</title>
     <!-- Add Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -140,12 +141,86 @@
         <main>
             <header>
                 <h1>Ahmed Abdullah</h1>
+                                <!-- Add Font Awesome for Icons -->
+
                 <div class="contact">
-                    <a target="_blank" href="mailto:business.ahmadabdullah@gmail.com">business.ahmadabdullah@gmail.com</a><br>
-                    <a target="_blank" href="https://github.com/ahmedembeddedxx">github.com/ahmedembeddedxx</a><br>
-                    <a target="_blank" href="https://www.linkedin.com/in/ahmedembedded/">linkedin.com/in/ahmedembedded/</a><br>
-                    +92-331-622-4618
+                    <!-- Email Address with Copy Button -->
+                    <div>
+                        <a target="_blank" href="mailto:business.ahmadabdullah@gmail.com" style="text-decoration: none; color: var(--text-color);">
+                            <i class="fas fa-envelope"></i> business.ahmadabdullah@gmail.com
+                        </a>
+                        <button onclick="copyToClipboard('business.ahmadabdullah@gmail.com')" style="
+                            background: none; 
+                            border: none; 
+                            cursor: pointer; 
+                            margin-left: 10px; 
+                            color: var(--text-color);">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- GitHub Link with Copy Button -->
+                    <div>
+                        <a target="_blank" href="https://github.com/ahmedembeddedxx" style="text-decoration: none; color: var(--text-color);">
+                            <i class="fab fa-github"></i> github.com/ahmedembeddedxx
+                        </a>
+                        <button onclick="copyToClipboard('https://github.com/ahmedembeddedxx')" style="
+                            background: none; 
+                            border: none; 
+                            cursor: pointer; 
+                            margin-left: 10px; 
+                            color: var(--text-color);">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <!-- LinkedIn Link with Copy Button -->
+                    <div>
+                        <a target="_blank" href="https://www.linkedin.com/in/ahmedembedded/" style="text-decoration: none; color: var(--text-color);">
+                            <i class="fab fa-linkedin"></i> linkedin.com/in/ahmedembedded/
+                        </a>
+                        <button onclick="copyToClipboard('https://www.linkedin.com/in/ahmedembedded/')" style="
+                            background: none; 
+                            border: none; 
+                            cursor: pointer; 
+                            margin-left: 10px; 
+                            color: var(--text-color);">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <div style="text-decoration: none; color: var(--text-color);">+92 (331) 6224618</div>
                 </div>
+
+                <!-- Notification Element -->
+                <div id="copy-notification" style="
+                    display: none; 
+                    position: fixed; 
+                    bottom: 10px; 
+                    right: 10px; 
+                    background-color: #2c3e50; 
+                    color: white; 
+                    padding: 10px 20px; 
+                    border-radius: 5px; 
+                    font-size: 0.9rem; 
+                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
+                    Link copied to clipboard!
+                </div>
+
+                <script>
+                    function copyToClipboard(text) {
+                        navigator.clipboard.writeText(text).then(() => {
+                            const notification = document.getElementById('copy-notification');
+                            notification.style.display = 'block';
+                            setTimeout(() => {
+                                notification.style.display = 'none';
+                            }, 3000); // Hides notification after 3 seconds
+                        }).catch(err => {
+                            console.error('Error copying text: ', err);
+                        });
+                    }
+                </script>
+
             </header>
 
             <section>
@@ -254,13 +329,13 @@
                     <div class="experience-title">Bachelor of Science in Data Science</div>
                     <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/">National University of Computer and Emerging Sciences, Lahore</a></div>
                     <div class="experience-date">Aug. 2022 – May. 2026</div>
-                    <p>CGPA: 3.58/4.00</p>
+                    <p>CGPA: 3.59/4.00</p>
                     <p>Honours: Dean's List (thrice), Top of Batch (twice)</p>
                 </div>
             </section>
 
             <section>
-                <h2>Skills</h2>
+                <h2>Skills & Languages</h2>
                 <div class="skills">
                     <span class="skill-item">Python</span>
                     <span class="skill-item">JavaScript</span>
@@ -269,6 +344,7 @@
                     <span class="skill-item">PyTorch</span>
                     <span class="skill-item">TensorFlow</span>
                     <span class="skill-item">Transformers</span>
+                    <span class="skill-item">LangChain</span>
                     <span class="skill-item">Power BI</span>
                     <span class="skill-item">Tableau</span>
                     <span class="skill-item">Plotly</span>
@@ -302,6 +378,7 @@
             <section>
                 <h2>Certifications</h2>
                 <div class="experience-item">
+                    <div class="experience-org" style="color: #2c3e50;">Generative AI engineering with LLMs from <a target="_blank" href="https://www.coursera.org/specializations/generative-ai-engineering-with-llms">Coursera</a></div>
                     <div class="experience-org" style="color: #2c3e50;">BioInformatics Specialization from <a target="_blank" href="https://www.coursera.org/specializations/bioinformatics">UC San Diego (Coursera)</a></div>
                     <div class="experience-org" style="color: #2c3e50;">Data Science Specialization from <a target="_blank" href="https://www.coursera.org/professional-certificates/ibm-data-science">IBM (Coursera)</a></div>
                     <div class="experience-org" style="color: #2c3e50;">Artificial Intelligence Specialization from <a target="_blank" href="https://www.coursera.org/professional-certificates/ibm-ai">IBM (Coursera)</a></div>
