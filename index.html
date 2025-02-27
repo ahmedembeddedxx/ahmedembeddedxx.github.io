@@ -7,6 +7,9 @@
     <!-- Add Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.3.0/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -141,9 +144,9 @@
         <main>
             <header>
                 <h1>Ahmed Abdullah</h1>
-                                <!-- Add Font Awesome for Icons -->
+                <!-- Add Font Awesome for Icons -->
 
-                <div class="contact">
+                    <div class="contact">
                     <!-- Email Address with Copy Button -->
                     <div>
                         <a target="_blank" href="mailto:business.ahmadabdullah@gmail.com" style="text-decoration: none; color: var(--text-color);">
@@ -190,6 +193,14 @@
                     </div>
 
                     <div style="text-decoration: none; color: var(--text-color);">+92 (331) 6224618</div>
+
+                    <a href="Ahmed Abdullah - Resume A.pdf" download>
+                        <button style="padding: 6px 12px; font-size: 14px; background-color: #3498db; color: white; font-weight: 500; border-radius: 6px; border: none; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); transition: background 0.2s;"
+                                onmouseover="this.style.backgroundColor='#2980b9'"
+                                onmouseout="this.style.backgroundColor='#3498db'">
+                            Download Resume
+                        </button>
+                    </a>
                 </div>
 
                 <!-- Notification Element -->
@@ -225,28 +236,48 @@
 
             <section>
                 <h2>Experience</h2>
-            
+                <div class="experience-item">
+                    <div class="experience-title">Undergraduate Researcher</div>
+                    <div class="experience-org"><a target="_blank" href="https://cec.mst.edu/">College of Engineering and Computing, Missouri S&T University</a> (Remote)</div>
+                    <div class="experience-date">Feb 2025 - Present</div>
+                    <p>Computational Oncology Research: Developing a predictive model for tumor de-growth using the Gompertz function to assess drug efficacy. Implementing mathematical modeling and data-driven approaches to analyze tumor response, aiming to improve accuracy in treatment outcome predictions. Working with oncological datasets and statistical techniques to enhance precision medicine strategies.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-title">Research Assistant</div>
+                    <div class="experience-org"><a target="_blank" href="https://www.jku.at/en/institute-of-computational-perception/">Institute of Computational Perception, Johannes Kepler University</a></div>
+                    <div class="experience-date">Aug 2024 - Feb 2025</div>
+                    <p>Multimodals Research: Worked on handling missing modality and accurately estimating face-voice association
+                        using FOP Loss. Proposed a novel approach leveraging WavLM, ECAPA, and VGGVox on the VoxCelebV1 dataset
+                        to improve embedding quality through pseudo-modal and zero-shot learning. Addressed challenges in cross-modal
+                        learning and optimized the model for robustness in real-world scenarios. Achieved an Equal Error Rate (EER) of
+                        20%, outperforming previous benchmarks in voice-face matching accuracy.</p>
+                </div>
+
                 <div class="experience-item">
                     <div class="experience-title">Research Assistant</div>
                     <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/fsc/">School of Computing, FAST-NUCES</a></div>
-                    <div class="experience-date">Sept 2024 - Present</div>
-                    <p>Research in Healthcare: Working on developing a better approach for ischemic stroke functional prediction through multimodal imaging, utilizing deep learning models such as ResNet152, MedicalNet, and UNet for volumetric segmentation. This research aims to improve prediction accuracy and enhance clinical decision-making.</p>
-                </div>
-            
-                <div class="experience-item">
-                    <div class="experience-title">Research Assistant</div>
-                    <div class="experience-org"><a target="_blank" href="https://www.jku.at/en/institute-of-computational-perception/">Institute of Computational Perception - Johannes Kepler University</a></div>
-                    <div class="experience-date">Aug 2024 - Present</div>
-                    <p>Research in Multimodals: Contributed to ongoing research on face-voice association using state-of-the-art models like WavLM, ECAPA, and VGGVox on the VoxCelebV1 dataset. My work includes improving the robustness of voice and facial feature matching for applications in security and personalized systems.The model is able to acheive EER of 20% and we are still working on improving it</p>
+                    <div class="experience-date">Sept 2024 - Nov 2024</div>
+                    <p>Healthcare Research: Worked on a novel approach using Pathopix-GANs for CT scan augmentation in ischemic
+                        stroke functional outcome prediction. Addressed data scarcity (only 43 patients available) by enhancing multimodal
+                        imaging. Utilized the ISLES’24 dataset and surpassed the previous state-of-the-art accuracy of 43%.</p>
                 </div>
             
                 <div class="experience-item">
                     <div class="experience-title">Research Intern</div>
                     <div class="experience-org"><a target="_blank" href="https://www.linkedin.com/company/urdux">UrduX, FAST-NUCES</a></div>
                     <div class="experience-date">Jan 2024 - Aug 2024</div>
-                    <p>Research in Language Models and Bias Detection: Worked on Large Language Models (LLMs) and their impact on gender and race biases in image generation. The project involved analyzing the biases in AI-generated imagery and developing methods to mitigate these biases. My work helped improve the ethical use of AI in generating fairer, more diverse imagery in applications like advertising, media, and content generation.</p>
+                    <p>Generative AI / NLP Research: Worked on Large Language Models (LLMs) and their impact on gender and race biases in image generation. The project involved analyzing the biases in AI-generated imagery and developing methods to mitigate these biases. My work helped improve the ethical use of AI in generating fairer, more diverse imagery in applications like advertising, media, and content generation.</p>
                 </div>
-            
+
+                <div class="experience-item">
+                    <div class="experience-title">Software Engineering Intern</div>
+                    <div class="experience-org"><a target="_blank" href="https://www.contract.pk">Contract.pk</a></div>
+                    <div class="experience-date">Jun 2022 - Jul 2022</div>
+                    <p>Software Development (MERN Stack): Contributed to the development of web applications using the MERN stack (MongoDB, Express, React, Node.js). I worked on building responsive front-end features and improving back-end functionality. This experience helped me strengthen my full-stack development skills and provided me with hands-on exposure to the software development lifecycle, debugging, and optimization techniques.</p>
+                </div>
+                
+
             </section>
 
             <section class="manuscripts">
@@ -329,7 +360,7 @@
                     <div class="experience-title">Bachelor of Science in Data Science</div>
                     <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/">National University of Computer and Emerging Sciences, Lahore</a></div>
                     <div class="experience-date">Aug. 2022 – May. 2026</div>
-                    <p>CGPA: 3.59/4.00</p>
+                    <p>CGPA: 3.6/4.00</p>
                     <p>Honours: Dean's List (thrice), Top of Batch (twice)</p>
                 </div>
             </section>
