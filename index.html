@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -140,6 +141,7 @@
     </style>
 </head>
 <body>
+    
     <div class="container">
         <main>
             <header">
@@ -198,13 +200,49 @@
                     <div style="text-decoration: none; color: var(--text-color);">+92 (331) 6224618</div>
                     <div style="margin-bottom: 10px;"></div>
 
-                    <a href="Ahmed Abdullah - Resume A.pdf" download>
-                        <button style="padding: 6px 12px; font-size: 14px; background-color: #3498db; color: white; font-weight: 500; border-radius: 6px; border: none; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); transition: background 0.2s;"
-                                onmouseover="this.style.backgroundColor='#2980b9'"
-                                onmouseout="this.style.backgroundColor='#3498db'">
-                            Download Resume
-                        </button>
-                    </a>
+                    <button id="downloadResumeBtn" style="padding: 6px 12px; font-size: 14px; background-color: #3498db; color: white; font-weight: 500; border-radius: 6px; border: none; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); transition: background 0.2s;"
+                        onmouseover="this.style.backgroundColor='#2980b9'"
+                        onmouseout="this.style.backgroundColor='#3498db'">
+                        Download Resume
+                    </button>
+                    <!-- Resume Selection Modal -->
+                    <div id="resumeModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(44,62,80,0.4); z-index:9999; align-items:center; justify-content:center;">
+                        <div style="background:#fff; padding:24px 32px; border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,0.15); min-width:260px; text-align:center;">
+                            <h3 style="margin-bottom:18px; color:#2c3e50;">Select Resume Type</h3>
+                            <button onclick="downloadResume('research')" style="margin:8px; padding:8px 18px; background:#3498db; color:#fff; border:none; border-radius:5px; font-size:15px; cursor:pointer;">Research</button>
+                            <button onclick="downloadResume('development')" style="margin:8px; padding:8px 18px; background:#3498db; color:#fff; border:none; border-radius:5px; font-size:15px; cursor:pointer;">Development</button>
+                            <br>
+                            <button onclick="closeResumeModal()" style="margin-top:18px; background:none; border:none; color:#666; font-size:13px; cursor:pointer;">Cancel</button>
+                        </div>
+                    </div>
+                    <script>
+                        document.getElementById('downloadResumeBtn').onclick = function() {
+                            document.getElementById('resumeModal').style.display = 'flex';
+                        };
+                        function closeResumeModal() {
+                            document.getElementById('resumeModal').style.display = 'none';
+                        }
+                        function downloadResume(type) {
+                            let file = '';
+                            if (type === 'research') {
+                                file = 'Ahmed Abdullah Resume RA.pdf';
+                            } else if (type === 'development') {
+                                file = 'Ahmed Abdullah Resume WOI.pdf';
+                            }
+                            // Create a temporary link and trigger download
+                            const link = document.createElement('a');
+                            link.href = file;
+                            link.download = file;
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                            closeResumeModal();
+                        }
+                        // Optional: Close modal when clicking outside the modal box
+                        document.getElementById('resumeModal').addEventListener('click', function(e) {
+                            if (e.target === this) closeResumeModal();
+                        });
+                    </script>
                 </div>
 
                 <!-- Notification Element -->
@@ -238,66 +276,135 @@
 
             </header>
 
-            <section class="">
+            <section>
                 <h2>Experience</h2>
-                <div class="experience-item">
-                    <div class="experience-title">SWE, GenAI Intern</div>
-                    <div class="experience-org"><a target="_blank" href="https://macromed.com.pk/">MarcoMed (Pvt.) LTD</a> (Hybrid)</div>
-                    <div class="experience-date">Apr 2025 - Present</div>
-                    <p>Contributed to the development of generative AI solutions, with a focus on improving model performance and addressing ethical considerations in AI applications. Developed a recommendation system pipeline and a Level 2 chatbot API to support multimodal text-to-speech (TTS) product suggestions.</p>
-
+                <div class="relative pl-0 md:pl-0">
+                    <!-- Vertical Timeline Line -->
+                    <div class="absolute left-0 md:left-0 top-0 bottom-0 w-0.5 border-l-2 border-dotted border-blue-400 z-0"></div>
+                    <!-- Timeline Items -->
+                    <div class="space-y-10">
+                        <!-- Item 1 -->
+                        <div class="relative flex items-start group">
+                            <div class="absolute left-0 top-2">
+                                <span class="block w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-md z-10"></span>
+                            </div>
+                            <div class="bg-white shadow-lg rounded-lg p-6 experience-item ml-8 w-full">
+                                <div class="experience-title">Product Engineer, MLLMs</div>
+                                <div class="experience-org"><a target="_blank" href="">Stealth</a> (Remote)</div>
+                                <div class="experience-date">Jul 2025 - Present</div>
+                                <p>Developing generative AI solutions for healthcare tech</p>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="relative flex items-start group">
+                            <div class="absolute left-0 top-2">
+                                <span class="block w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-md z-10"></span>
+                            </div>
+                            <div class="bg-white shadow-lg rounded-lg p-6 experience-item ml-8 w-full">
+                                <div class="experience-title">Research Assistant</div>
+                                <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/">Department of DS & AI, FAST-NUCES</a> (On-Site)</div>
+                                <div class="experience-date">Jul 2025 - Present</div>
+                                <p>Research in remote sensing quality enhancement in satellite imagery.</p>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="relative flex items-start group">
+                            <div class="absolute left-0 top-2">
+                                <span class="block w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-md z-10"></span>
+                            </div>
+                            <div class="bg-white shadow-lg rounded-lg p-6 experience-item ml-8 w-full">
+                                <div class="experience-title">Teaching Assistant</div>
+                                <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/">School of Computing, FAST-NUCES</a> (Hybrid)</div>
+                                <div class="experience-date">Jan 2025 - Present</div>
+                                <p>Assisted in teaching and labs for Computer Organization and OOP courses.</p>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="relative flex items-start group">
+                            <div class="absolute left-0 md:left-2 top-2">
+                                <span class="block w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-md z-10"></span>
+                            </div>
+                            <div class="bg-white shadow-lg rounded-lg p-6 experience-item ml-8 w-full">
+                                <div class="experience-title">Research Intern, NLP & LLMs</div>
+                                <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/">School of Computing, FAST-NUCES</a> (Hybrid)</div>
+                                <div class="experience-date">Jun 2025 - Jul 2025</div>
+                                <p>Worked on generative AI and chatbot pipelines.</p>
+                            </div>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="relative flex items-start group">
+                            <div class="absolute left-0 md:left-2 top-2">
+                                <span class="block w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-md z-10"></span>
+                            </div>
+                            <div class="bg-white shadow-lg rounded-lg p-6 experience-item ml-8 w-full">
+                                <div class="experience-title">Software Engineer, AI</div>
+                                <div class="experience-org"><a target="_blank" href="https://macromed.com.pk/">MarcoMed (Pvt.) LTD</a> (Hybrid)</div>
+                                <div class="experience-date">Apr 2025 - Jun 2025</div>
+                                <p>Built AI-powered recommendation and TTS systems.</p>
+                            </div>
+                        </div>
+                        <!-- Item 6 -->
+                        <div class="relative flex items-start group">
+                            <div class="absolute left-0 md:left-2 top-2">
+                                <span class="block w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-md z-10"></span>
+                            </div>
+                            <div class="bg-white shadow-lg rounded-lg p-6 experience-item ml-8 w-full">
+                                <div class="experience-title">Research Assistant</div>
+                                <div class="experience-org"><a target="_blank" href="https://cec.mst.edu/">College of Engineering and Computing, Missouri S&T University</a> (Remote)</div>
+                                <div class="experience-date">Feb 2025 - Jun 2025</div>
+                                <p>Developed predictive models for tumor de-growth in oncology research.</p>
+                            </div>
+                        </div>
+                        <!-- Item 7 -->
+                        <div class="relative flex items-start group">
+                            <div class="absolute left-0 md:left-2 top-2">
+                                <span class="block w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-md z-10"></span>
+                            </div>
+                            <div class="bg-white shadow-lg rounded-lg p-6 experience-item ml-8 w-full">
+                                <div class="experience-title">Research Assistant</div>
+                                <div class="experience-org"><a target="_blank" href="https://www.jku.at/en/institute-of-computational-perception/">Institute of Computational Perception, Johannes Kepler University</a> (Remote)</div>
+                                <div class="experience-date">Aug 2024 - Feb 2025</div>
+                                <p>Worked on cross-modal face-voice association and missing modality learning.</p>
+                            </div>
+                        </div>
+                        <!-- Item 8 -->
+                        <div class="relative flex items-start group">
+                            <div class="absolute left-0 md:left-2 top-2">
+                                <span class="block w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-md z-10"></span>
+                            </div>
+                            <div class="bg-white shadow-lg rounded-lg p-6 experience-item ml-8 w-full">
+                                <div class="experience-title">Research Assistant</div>
+                                <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/fsc/">School of Computing, FAST-NUCES</a> (On-Site)</div>
+                                <div class="experience-date">Sept 2024 - Nov 2024</div>
+                                <p>Researched CT scan augmentation for stroke outcome prediction.</p>
+                            </div>
+                        </div>
+                        <!-- Item 9 -->
+                        <div class="relative flex items-start group">
+                            <div class="absolute left-0 md:left-2 top-2">
+                                <span class="block w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-md z-10"></span>
+                            </div>
+                            <div class="bg-white shadow-lg rounded-lg p-6 experience-item ml-8 w-full">
+                                <div class="experience-title">Research Intern</div>
+                                <div class="experience-org"><a target="_blank" href="https://www.linkedin.com/company/urdux">UrduX, FAST-NUCES</a> (Remote)</div>
+                                <div class="experience-date">Jan 2024 - Aug 2024</div>
+                                <p>Studied LLMs and bias mitigation in generative AI imagery.</p>
+                            </div>
+                        </div>
+                        <!-- Item 10 -->
+                        <div class="relative flex items-start group">
+                            <div class="absolute left-0 md:left-2 top-2">
+                                <span class="block w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-md z-10"></span>
+                            </div>
+                            <div class="bg-white shadow-lg rounded-lg p-6 experience-item ml-8 w-full">
+                                <div class="experience-title">Software Engineering Intern</div>
+                                <div class="experience-org"><a target="_blank" href="https://www.contract.pk">Contract.pk</a> (Remote)</div>
+                                <div class="experience-date">Jun 2022 - Jul 2022</div>
+                                <p>Worked on MERN stack web development and feature implementation.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="experience-item">
-                    <div class="experience-title">Research Assistant</div>
-                    <div class="experience-org"><a target="_blank" href="https://cec.mst.edu/">College of Engineering and Computing, Missouri S&T University</a> (Remote)</div>
-                    <div class="experience-date">Feb 2025 - Present</div>
-                    <p>Computational Oncology Research: Developing a predictive model for tumor de-growth using the Gompertz function to assess drug efficacy. Implementing mathematical modeling and data-driven approaches to analyze tumor response, aiming to improve accuracy in treatment outcome predictions. Working with oncological datasets and statistical techniques to enhance precision medicine strategies.</p>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-title">Teaching Assistant</div>
-                    <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/">FAST-NUCES</a></div>
-                    <div class="experience-date">Jan 2025 - Present</div>
-                    <p>Teaching Assistant for Computer Organization & Assembly Language (EE2003) and Object-Oriented Programming (CL1004). Conducted lab sessions, guided students through complex programming concepts, and assisted in debugging and problem-solving. Evaluated assignments, held office hours, and collaborated with faculty to improve student learning experiences.</p>
-                </div>
-
-
-                <div class="experience-item">
-                    <div class="experience-title">Research Assistant</div>
-                    <div class="experience-org"><a target="_blank" href="https://www.jku.at/en/institute-of-computational-perception/">Institute of Computational Perception, Johannes Kepler University</a></div>
-                    <div class="experience-date">Aug 2024 - Feb 2025</div>
-                    <p>Multimodals Research: Worked on handling missing modality and accurately estimating face-voice association
-                        using FOP Loss. Proposed a novel approach leveraging WavLM, ECAPA, and VGGVox on the VoxCelebV1 dataset
-                        to improve embedding quality through pseudo-modal and zero-shot learning. Addressed challenges in cross-modal
-                        learning and optimized the model for robustness in real-world scenarios. Achieved an Equal Error Rate (EER) of
-                        20%, outperforming previous benchmarks in voice-face matching accuracy.</p>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-title">Undergraduate Research Assistant</div>
-                    <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/fsc/">School of Computing, FAST-NUCES</a></div>
-                    <div class="experience-date">Sept 2024 - Nov 2024</div>
-                    <p>Healthcare Research: Worked on a novel approach using Pathopix-GANs for CT scan augmentation in ischemic
-                        stroke functional outcome prediction. Addressed data scarcity (only 43 patients available) by enhancing multimodal
-                        imaging. Utilized the ISLES’24 dataset and surpassed the previous state-of-the-art accuracy of 43%.</p>
-                </div>
-            
-                <div class="experience-item">
-                    <div class="experience-title">Research Intern</div>
-                    <div class="experience-org"><a target="_blank" href="https://www.linkedin.com/company/urdux">UrduX, FAST-NUCES</a></div>
-                    <div class="experience-date">Jan 2024 - Aug 2024</div>
-                    <p>Generative AI / NLP Research: Worked on Large Language Models (LLMs) and their impact on gender and race biases in image generation. The project involved analyzing the biases in AI-generated imagery and developing methods to mitigate these biases. My work helped improve the ethical use of AI in generating fairer, more diverse imagery in applications like advertising, media, and content generation.</p>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-title">Software Engineering Intern</div>
-                    <div class="experience-org"><a target="_blank" href="https://www.contract.pk">Contract.pk</a></div>
-                    <div class="experience-date">Jun 2022 - Jul 2022</div>
-                    <p>Software Development (MERN Stack): Contributed to the development of web applications using the MERN stack (MongoDB, Express, React, Node.js). I worked on building responsive front-end features and improving back-end functionality. This experience helped me strengthen my full-stack development skills and provided me with hands-on exposure to the software development lifecycle, debugging, and optimization techniques.</p>
-                </div>
-                
-
             </section>
 
             <section class="manuscripts">
@@ -324,58 +431,148 @@
 
             <section>
                 <h2>Projects</h2>
-
-                
-                <div class="experience-item">
-                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/PANCAKES" target="_blank">PANCAKES: Panoptic Adversarial Nuclei Classification and Segmentation</a></div>
-                    <p>A high-performance framework for panoptic segmentation and classification of cell nuclei, combining Pathopix-GANs, Segment Anything, and diffusion models to enhance biological image understanding through adversarial and knowledge-enhanced learning.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Project 1 -->
+                    <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full hover:shadow-xl transition-shadow border border-blue-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-dna text-blue-500 mr-2"></i>
+                            <a href="https://github.com/ahmedembeddedxx/PANCAKES" target="_blank" class="font-bold text-lg text-blue-700 hover:underline">PANCAKES</a>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2">Panoptic Adversarial Nuclei Classification and Segmentation</div>
+                        <p class="text-gray-700 flex-grow">A high-performance framework for panoptic segmentation and classification of cell nuclei, combining Pathopix-GANs, Segment Anything, and diffusion models to enhance biological image understanding through adversarial and knowledge-enhanced learning.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="skill-item">PyTorch</span>
+                            <span class="skill-item">GANs</span>
+                            <span class="skill-item">Diffusion Models</span>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full hover:shadow-xl transition-shadow border border-blue-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-robot text-blue-500 mr-2"></i>
+                            <a href="https://github.com/ahmedembeddedxx/AskFAST" target="_blank" class="font-bold text-lg text-blue-700 hover:underline">AskFAST Chatbot</a>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2">AI-powered University Admission Chatbot</div>
+                        <p class="text-gray-700 flex-grow">A conversational AI chatbot for handling admission queries at FAST, providing instant, accurate, and friendly responses to prospective students and parents.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="skill-item">NLP</span>
+                            <span class="skill-item">Flask</span>
+                            <span class="skill-item">Dialogflow</span>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full hover:shadow-xl transition-shadow border border-blue-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-heartbeat text-blue-500 mr-2"></i>
+                            <a href="https://github.com/ahmedembeddedxx/skin-cancer-lesion-segmentation" target="_blank" class="font-bold text-lg text-blue-700 hover:underline">Skin Cancer Lesion Segmentation</a>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2">Medical Image Analysis</div>
+                        <p class="text-gray-700 flex-grow">Developed a multimodal system to detect skin cancer, combining advanced CNNs and image analysis for improved diagnostic accuracy and early detection.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="skill-item">CNN</span>
+                            <span class="skill-item">Medical Imaging</span>
+                            <span class="skill-item">PyTorch</span>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full hover:shadow-xl transition-shadow border border-blue-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-baseball-ball text-blue-500 mr-2"></i>
+                            <a href="https://github.com/ahmedembeddedxx/lbw-review-system" target="_blank" class="font-bold text-lg text-blue-700 hover:underline">LBW Review System</a>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2">Sports Analytics</div>
+                        <p class="text-gray-700 flex-grow">A computer vision system for cricket, detecting and analyzing ball trajectories to assist in LBW (Leg Before Wicket) decisions, enhancing umpire accuracy.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="skill-item">OpenCV</span>
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Sports Analytics</span>
+                        </div>
+                    </div>
+                    <!-- Project 5 -->
+                    <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full hover:shadow-xl transition-shadow border border-blue-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-search text-blue-500 mr-2"></i>
+                            <a href="https://github.com/ahmedembeddedxx/multimodal-search-engine" target="_blank" class="font-bold text-lg text-blue-700 hover:underline">Multimodal Search Engine</a>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2">Image & Text Retrieval</div>
+                        <p class="text-gray-700 flex-grow">A search engine using OpenAI's CLIP for semantic image search, with a Flask backend and a responsive web frontend for intuitive user experience.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="skill-item">CLIP</span>
+                            <span class="skill-item">Flask</span>
+                            <span class="skill-item">React</span>
+                        </div>
+                    </div>
+                    <!-- Project 6 -->
+                    <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full hover:shadow-xl transition-shadow border border-blue-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-chart-line text-blue-500 mr-2"></i>
+                            <a href="https://github.com/ahmedembeddedxx/candlestick-data-viz" target="_blank" class="font-bold text-lg text-blue-700 hover:underline">Candlestick Data Visualization</a>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2">Financial Data Visualization</div>
+                        <p class="text-gray-700 flex-grow">An interactive C++ tool for visualizing stock market data with candlestick charts, enabling traders to analyze price movements efficiently.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="skill-item">C++</span>
+                            <span class="skill-item">Data Viz</span>
+                            <span class="skill-item">Finance</span>
+                        </div>
+                    </div>
+                    <!-- Project 7 -->
+                    <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full hover:shadow-xl transition-shadow border border-blue-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-user-md text-blue-500 mr-2"></i>
+                            <a href="https://github.com/ahmedembeddedxx/HCT-survival-prediction" target="_blank" class="font-bold text-lg text-blue-700 hover:underline">HCT Survival Prediction</a>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2">Healthcare Predictive Modeling</div>
+                        <p class="text-gray-700 flex-grow">Machine learning model to predict survival outcomes for Hematopoietic Cell Transplantation patients, supporting clinicians in decision-making.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="skill-item">ML</span>
+                            <span class="skill-item">Healthcare</span>
+                            <span class="skill-item">Python</span>
+                        </div>
+                    </div>
+                    <!-- Project 8 -->
+                    <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full hover:shadow-xl transition-shadow border border-blue-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-quote-right text-blue-500 mr-2"></i>
+                            <a href="https://github.com/ahmedembeddedxx/AutoCiter" target="_blank" class="font-bold text-lg text-blue-700 hover:underline">AutoCiter</a>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2">Automated Citation Tool</div>
+                        <p class="text-gray-700 flex-grow">A Flask-based tool that uses sentence transformers and cosine similarity to automatically cite text from uploaded PDF research papers.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="skill-item">Flask</span>
+                            <span class="skill-item">NLP</span>
+                            <span class="skill-item">PDF</span>
+                        </div>
+                    </div>
+                    <!-- Project 9 -->
+                    <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full hover:shadow-xl transition-shadow border border-blue-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-utensils text-blue-500 mr-2"></i>
+                            <a href="https://github.com/ahmedembeddedxx/dinner-date-with-data" target="_blank" class="font-bold text-lg text-blue-700 hover:underline">Dinner Date with Data</a>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2">Recipe Recommendation System</div>
+                        <p class="text-gray-700 flex-grow">A PySpark-powered recommendation engine that suggests recipes based on user preferences, leveraging distributed computing for scalability.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="skill-item">PySpark</span>
+                            <span class="skill-item">Recommender</span>
+                            <span class="skill-item">GPU</span>
+                        </div>
+                    </div>
+                    <!-- Project 10 -->
+                    <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full hover:shadow-xl transition-shadow border border-blue-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fab fa-twitter text-blue-500 mr-2"></i>
+                            <a href="https://github.com/ahmedembeddedxx/batch-twitter-sentiment-analysis" target="_blank" class="font-bold text-lg text-blue-700 hover:underline">Batch Twitter Sentiment Analysis</a>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2">Big Data Sentiment Analysis</div>
+                        <p class="text-gray-700 flex-grow">Performs sentiment analysis on Twitter data using Hadoop clusters and PySpark, enabling large-scale social media insights for brands and researchers.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="skill-item">PySpark</span>
+                            <span class="skill-item">Hadoop</span>
+                            <span class="skill-item">NLP</span>
+                        </div>
+                    </div>
                 </div>
-            
-                <div class="experience-item">
-                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/AskFAST" target="_blank">AskFAST Chatbot</a></div>
-                    <p>AskFAST is a chatbot designed to handle admission-related queries for FAST, streamlining the process with AI-driven responses.</p>
-                </div>
-            
-                <div class="experience-item">
-                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/skin-cancer-lesion-segmentation" target="_blank">Skin Cancer Lesion Segmentation</a></div>
-                    <p>Developed a multimodal system to detect skin cancer, combining cutting-edge CNNs with detailed image analysis to elevate skin cancer detection.</p>
-                </div>
-            
-                <div class="experience-item">
-                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/lbw-review-system" target="_blank">LBW Review System</a></div>
-                    <p>The LBW (Leg Before Wicket) Review System detects and analyzes ball movements in cricket matches, specifically focusing on LBW scenarios.</p>
-                </div>
-            
-                <div class="experience-item">
-                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/multimodal-search-engine" target="_blank">Multimodal Search Engine</a></div>
-                    <p>Developed a multimodal search engine using CLIP by OpenAI with Flask API for backend and HTML/CSS for the frontend web application, using image embeddings for searching images.</p>
-                </div>
-            
-                <div class="experience-item">
-                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/candlestick-data-viz" target="_blank">Candlestick Data Visualization</a></div>
-                    <p>Created an interactive candlestick chart in C++ to visualize financial market data with an emphasis on stock price movements.</p>
-                </div>
-            
-                <div class="experience-item">
-                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/HCT-survival-prediction" target="_blank">HCT Survival Prediction</a></div>
-                    <p>Developed a model to predict survival outcomes for Hematopoietic Cell Transplantation (HCT) patients, leveraging patient data and machine learning techniques.</p>
-                </div>
-            
-                <div class="experience-item">
-                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/AutoCiter" target="_blank">AutoCiter</a></div>
-                    <p>AutoCiter is a Flask-based tool that uses sentence transformers and cosine similarity to automatically cite text from uploaded PDF papers.</p>
-                </div>
-            
-                <div class="experience-item">
-                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/dinner-date-with-data" target="_blank">Dinner Date with Data</a></div>
-                    <p>This project recommends recipes to users based on their preferences using PySpark and GPU acceleration, leveraging distributed computing capabilities.</p>
-                </div>
-            
-                <div class="experience-item">
-                    <div class="experience-title"><a href="https://github.com/ahmedembeddedxx/batch-twitter-sentiment-analysis" target="_blank">Batch Twitter Sentiment Analysis</a></div>
-                    <p>This project performs sentiment analysis on Twitter data in a batch processing manner using the ntscraper library, Hadoop clusters (HDFS), and PySpark.</p>
-                </div>
-            
             </section>
 
 
@@ -390,8 +587,8 @@
                     <div class="experience-title">Bachelor of Science in Data Science</div>
                     <div class="experience-org"><a target="_blank" href="https://lhr.nu.edu.pk/">National University of Computer and Emerging Sciences, Lahore</a></div>
                     <div class="experience-date">Aug. 2022 – May. 2026</div>
-                    <p>CGPA: 3.6/4.00</p>
-                    <p>Honours: Dean's List (thrice), Top of Batch (twice)</p>
+                    <p>CGPA: 3.7/4.00</p>
+                    <p>Honours: Dean's List (x4), Top of Batch (x2)</p>
                 </div>
             </section>
 
